@@ -92,7 +92,7 @@
  * Define ENABLE_STATS to 1 to gather various statistics during occlusion culling. Can be used for profiling 
  * and debugging. Note that enabling this function will reduce performance significantly.
  */
-#define ENABLE_STATS                    0
+#define ENABLE_STATS                    1
 
 #endif
 

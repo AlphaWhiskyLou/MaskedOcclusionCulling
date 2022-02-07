@@ -20,6 +20,7 @@
 #include <stdlib.h>
 #include <float.h>
 #include <algorithm>
+#include <iostream>
 #ifdef _WIN32
 	#include <intrin.h>
 #else
@@ -181,6 +182,40 @@ int main(int argc, char* argv[])
 		printf("Tested rect is OCCLUDED\n");
 	else if (result == MaskedOcclusionCulling::VIEW_CULLED)
 		printf("Tested rect is outside view frustum\n");
+
+	MaskedOcclusionCulling::OcclusionCullingStatistics tempStats = moc->GetStatistics();
+
+	/*	struct OcclusionCullingStatistics
+	{
+		struct
+		{
+			long long mNumProcessedTriangles;  //!< Number of occluder triangles processed in total
+			long long mNumRasterizedTriangles; //!< Number of occluder triangles passing view frustum and backface culling
+			long long mNumTilesTraversed;      //!< Number of tiles traversed by the rasterizer
+			long long mNumTilesUpdated;        //!< Number of tiles where the hierarchical z buffer was updated
+			long long mNumTilesMerged;        //!< Number of tiles where the hierarchical z buffer was updated
+		} mOccluders;
+
+		struct
+		{
+			long long mNumProcessedRectangles; //!< Number of rects processed (TestRect())
+			long long mNumProcessedTriangles;  //!< Number of ocludee triangles processed (TestTriangles())
+			long long mNumRasterizedTriangles; //!< Number of ocludee triangle passing view frustum and backface culling
+			long long mNumTilesTraversed;      //!< Number of tiles traversed by triangle & rect rasterizers
+		} mOccludees;
+	};
+	*/
+	std::cout << "Occluders:" << "\n";
+	std::cout << "ProcessedTriangles:" << tempStats.mOccluders.mNumProcessedTriangles << "\n";
+	std::cout << "RasterizedTriangles:" << tempStats.mOccluders.mNumRasterizedTriangles << "\n";
+	std::cout << "TilesTraversed:" << tempStats.mOccluders.mNumTilesTraversed << "\n";
+	std::cout << "TilesUpdated:" << tempStats.mOccluders.mNumTilesUpdated << "\n";
+	std::cout << "TilesMerged:" << tempStats.mOccluders.mNumTilesMerged << "\n";
+	std::cout << "Occludees:" << "\n";
+	std::cout << "ProcessedRectangles:" << tempStats.mOccludees.mNumProcessedRectangles << "\n";
+	std::cout << "ProcessedTriangles:" << tempStats.mOccludees.mNumProcessedTriangles << "\n";
+	std::cout << "RasterizedTriangles:" << tempStats.mOccludees.mNumRasterizedTriangles << "\n";
+	std::cout << "TilesTraversed:" << tempStats.mOccludees.mNumTilesTraversed << "\n";
 
 	// Compute a per pixel depth buffer from the hierarchical depth buffer, used for visualization.
 	float *perPixelZBuffer = new float[width * height];
