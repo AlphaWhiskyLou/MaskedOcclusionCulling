@@ -21,11 +21,14 @@
 #include <float.h>
 #include <algorithm>
 #include <iostream>
+#include "sse2neon.h"
+/*
 #ifdef _WIN32
 	#include <intrin.h>
 #else
 	#include <immintrin.h>
-#endif
+	
+#endif*/
 
 #include "../MaskedOcclusionCulling.h"
 

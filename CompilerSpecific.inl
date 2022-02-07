@@ -23,7 +23,7 @@
 #endif
 
 #if defined(_WIN32)	&& (defined(_MSC_VER) || defined(__INTEL_COMPILER) || defined(__clang__)) // Windows: MSVC / Intel compiler / clang
-	#include <intrin.h>
+	#include "sse2neon.h"
 	#include <new.h>
 
 	#define FORCE_INLINE __forceinline
@@ -54,7 +54,7 @@
 	#include <malloc.h> // memalign
 #endif
 	#include <mm_malloc.h>
-	#include <immintrin.h>
+	#include "sse2neon.h"
 	#include <new>
 
 	#define FORCE_INLINE inline
