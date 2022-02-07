@@ -19,6 +19,7 @@
 #include <float.h>
 #include "MaskedOcclusionCulling.h"
 #include "CompilerSpecific.inl"
+#include "sse2neon.h"
 
 #if MOC_RECORDER_ENABLE
 #include "FrameRecorder.h"
