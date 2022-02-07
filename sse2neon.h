@@ -1,6 +1,5 @@
 #ifndef SSE2NEON_H
 #define SSE2NEON_H
-
 // This header file provides a simple API translation layer
 // between SSE intrinsics to their corresponding Arm/Aarch64 NEON versions
 //
@@ -129,6 +128,7 @@
 #endif
 
 #include <arm_neon.h>
+#include <arm64_neon.h>
 
 /* Rounding functions require either Aarch64 instructions or libm failback */
 #if !defined(__aarch64__)
