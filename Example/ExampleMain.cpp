@@ -82,7 +82,7 @@ static void TonemapDepth(float *depth, unsigned char *image, int w, int h)
 int main(int argc, char* argv[])
 {
 	// Flush denorms to zero to avoid performance issues with small values
-	_mm_setcsr(_mm_getcsr() | 0x8040);
+	//_mm_setcsr(_mm_getcsr() | 0x8040);
 
 	MaskedOcclusionCulling *moc = MaskedOcclusionCulling::Create();
 

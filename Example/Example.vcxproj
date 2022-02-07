@@ -210,10 +210,12 @@
       <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotSet</EnableEnhancedInstructionSet>
       <EnableEnhancedInstructionSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotSet</EnableEnhancedInstructionSet>
     </ClCompile>
+    <ClCompile Include="MatrixTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CullingThreadpool.h" />
     <ClInclude Include="..\MaskedOcclusionCulling.h" />
+    <ClInclude Include="..\sse2neon.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\CompilerSpecific.inl" />

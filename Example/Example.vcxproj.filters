@@ -14,12 +14,16 @@
     <ClCompile Include="..\MaskedOcclusionCullingAVX512.cpp">
       <Filter>MaskedOcclusionCullingLibrary</Filter>
     </ClCompile>
+    <ClCompile Include="MatrixTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\CullingThreadpool.h">
       <Filter>MaskedOcclusionCullingLibrary</Filter>
     </ClInclude>
     <ClInclude Include="..\MaskedOcclusionCulling.h">
+      <Filter>MaskedOcclusionCullingLibrary</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sse2neon.h">
       <Filter>MaskedOcclusionCullingLibrary</Filter>
     </ClInclude>
   </ItemGroup>
